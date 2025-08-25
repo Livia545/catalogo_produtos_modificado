@@ -4,11 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 // Página inicial redireciona para login
-// Página inicial customizada
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
-
 
 // Cadastro (1)
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
