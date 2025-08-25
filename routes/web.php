@@ -1,8 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+// Página inicial redireciona para login
+Route::get('/', function () { return redirect()->route('login'); });
+
+// Cadastro (1)
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+
+// Login (3)
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+
+// Esqueci a senha -> Editar (4)
+Route::get('/edit', [AuthController::class, 'showEdit'])->name('edit');
+Route::post('/edit', [AuthController::class, 'edit'])->name('edit.post');
+
+// Estou logado (5)
+Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+
+// Logout
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
