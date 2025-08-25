@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aula de Laravel</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-light">
-    <div class="container text-center mt-5">
-        <h1 class="mb-4">Aula de Laravel</h1>
-        <p>Bem-vindo à aplicação Laravel!</p>
-        <a href="{{ route('users.create') }}" class="btn btn-primary m-2">Cadastrar</a>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="text-center">
+        <!-- Desenho/ícone -->
+        <div class="mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mx-auto text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.105-.895-2-2-2H8V7c0-1.105.895-2 2-2h2c1.105 0 2 .895 2 2v2h2c1.105 0 2 .895 2 2v2c0 1.105-.895 2-2 2h-2v2c0 1.105-.895 2-2 2h-2c-1.105 0-2-.895-2-2v-2H6c-1.105 0-2-.895-2-2v-2c0-1.105.895-2 2-2h2V9c0-1.105.895-2 2-2h2c1.105 0 2 .895 2 2v2h2z" />
+            </svg>
+        </div>
+
+        <!-- Botões -->
+        <div class="space-x-4">
+            <a href="{{ url('/login') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Entrar</a>
+            <a href="{{ url('/register') }}" class="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700">Cadastrar</a>
+        </div>
     </div>
 </body>
 </html>

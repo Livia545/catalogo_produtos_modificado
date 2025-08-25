@@ -1,29 +1,14 @@
-## Requisitos
+# 📝 Sistema de Cadastro
 
-*PHP 8.2 ou superior
+Este projeto foi desenvolvido em **Laravel** e tem como objetivo criar um sistema de autenticação simples e funcional.
 
-*Composer
+Nele eu implementei:
 
-*Node.js 22 ou superior
+- **Página inicial** redirecionando para login  
+- **Cadastro de usuários** com formulário e gravação no banco  
+- **Login** com autenticação de dados  
+- **Edição de senha** para recuperar/alterar dados  
+- **Dashboard** acessível apenas quando o usuário está logado  
+- **Logout** para encerrar a sessão  
 
-## Sequência para criar o projeto
-
-Criar o projeto com laravel
-
-composer create-project laravel/laravel .
-
-Iniciar o projeto com Laravel
-
-php artisan serve
-
-Criar o controller
-
-php artisan make:controller User
-
-    Criar a View
-
-    php artisan make:view users/create
-
-    Criar tabelas no banco de dados
-
-    php artisan migrate
+O sistema organiza as rotas em `web.php` e utiliza o **AuthController** para gerenciar as funções de cadastro, login, edição e logout.
